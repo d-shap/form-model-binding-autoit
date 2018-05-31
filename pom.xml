@@ -4,7 +4,7 @@
 
     <groupId>ru.d-shap</groupId>
     <artifactId>form-model-binding-autoit</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
 
     <name>Form model autoit binding</name>
@@ -41,7 +41,7 @@
         <dependency>
             <groupId>ru.d-shap</groupId>
             <artifactId>form-model</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>de.openkeyword</groupId>
