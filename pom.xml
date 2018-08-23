@@ -285,6 +285,10 @@
                                 </goals>
                             </execution>
                         </executions>
+                        <configuration>
+                            <nohelp>true</nohelp>
+                            <show>public</show>
+                        </configuration>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
