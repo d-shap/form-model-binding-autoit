@@ -80,6 +80,7 @@ public final class AutoItFormBinder extends FormBinder<AutoItForm, AutoItElement
      * Bind current form with the form definition.
      *
      * @param formId the form ID.
+     *
      * @return Binded form.
      */
     public AutoItForm bind(final String formId) {
