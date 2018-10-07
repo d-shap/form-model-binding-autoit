@@ -1,6 +1,6 @@
 Form model autoit binding
 =========================
-Form model autoit binding is a form model implementation for AutoIt.
+Form model autoit binding is a form model binding implementation for AutoIt.
 
 Donation
 ========

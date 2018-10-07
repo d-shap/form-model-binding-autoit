@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Form model autoit binding is a form model implementation for AutoIt.
+// Form model autoit binding is a form model binding implementation for AutoIt.
 // Copyright (C) 2018 Dmitry Shapovalov.
 //
 // This file is part of form model autoit binding.
