@@ -2,11 +2,11 @@ Form model autoit binding
 =========================
 Form model autoit binding is a form model binding implementation for AutoIt.
 
-Maven artifact
+Latest release
 ==============
-* **groupId**: ru.d-shap
-* **artifactId**: form-model-binding-autoit
-* **version**: 1.0
+* **&lt;groupId&gt;**: ru.d-shap
+* **&lt;artifactId&gt;**: form-model-binding-autoit
+* **&lt;version&gt;**: -.-
 
 Donation
 ========
