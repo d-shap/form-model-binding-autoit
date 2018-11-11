@@ -6,7 +6,7 @@ Latest release
 ==============
 * **&lt;groupId&gt;**: ru.d-shap
 * **&lt;artifactId&gt;**: form-model-binding-autoit
-* **&lt;version&gt;**: -.-
+* **&lt;version&gt;**: -.-.-
 
 Donation
 ========
