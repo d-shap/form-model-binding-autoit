@@ -45,6 +45,11 @@ final class AutoItBindedElementImpl implements AutoItBindedElement {
     }
 
     @Override
+    public AutoItX getAutoIt() {
+        return _autoItX;
+    }
+
+    @Override
     public String getWindowTitle() {
         return _windowTitle;
     }

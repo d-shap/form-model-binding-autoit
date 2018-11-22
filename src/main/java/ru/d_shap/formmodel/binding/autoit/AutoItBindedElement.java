@@ -19,12 +19,21 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 package ru.d_shap.formmodel.binding.autoit;
 
+import autoitx4java.AutoItX;
+
 /**
  * The AutoIt binded element.
  *
  * @author Dmitry Shapovalov
  */
 public interface AutoItBindedElement {
+
+    /**
+     * Get the AutoIt.
+     *
+     * @return the AutoIt.
+     */
+    AutoItX getAutoIt();
 
     /**
      * Get the title of the window to access.
