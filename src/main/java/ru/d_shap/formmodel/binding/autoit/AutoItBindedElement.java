@@ -19,6 +19,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 package ru.d_shap.formmodel.binding.autoit;
 
+import ru.d_shap.formmodel.binding.model.BindedElement;
+
 import autoitx4java.AutoItX;
 
 /**
@@ -26,7 +28,7 @@ import autoitx4java.AutoItX;
  *
  * @author Dmitry Shapovalov
  */
-public interface AutoItBindedElement {
+public interface AutoItBindedElement extends BindedElement {
 
     /**
      * Get the AutoIt.
