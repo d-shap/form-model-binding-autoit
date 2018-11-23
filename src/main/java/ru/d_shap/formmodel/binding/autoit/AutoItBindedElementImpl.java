@@ -75,8 +75,38 @@ final class AutoItBindedElementImpl implements AutoItBindedElement {
     }
 
     @Override
-    public void click() {
-        _autoItX.controlClick(_windowTitle, _windowText, _controlId);
+    public boolean click() {
+        return _autoItX.controlClick(_windowTitle, _windowText, _controlId);
+    }
+
+    @Override
+    public boolean click(final String button) {
+        return _autoItX.controlClick(_windowTitle, _windowText, _controlId, button);
+    }
+
+    @Override
+    public boolean click(final String button, final int clicks) {
+        return _autoItX.controlClick(_windowTitle, _windowText, _controlId, button, clicks);
+    }
+
+    @Override
+    public boolean click(final String button, final int clicks, final int x, final int y) {
+        return _autoItX.controlClick(_windowTitle, _windowText, _controlId, button, clicks, x, y);
+    }
+
+    @Override
+    public boolean isChecked() {
+        return _autoItX.controlCommandIsChecked(_windowTitle, _windowText, _controlId);
+    }
+
+    @Override
+    public void check() {
+        _autoItX.controlCommandCheck(_windowTitle, _windowText, _controlId);
+    }
+
+    @Override
+    public void uncheck() {
+        _autoItX.controlCommandUncheck(_windowTitle, _windowText, _controlId);
     }
 
     @Override
