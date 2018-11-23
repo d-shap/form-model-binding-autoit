@@ -72,7 +72,7 @@ final class AutoItControlAttributes {
      *
      * @author Dmitry Shapovalov
      */
-    private static abstract class AutoItAttribute {
+    private abstract static class AutoItAttribute {
 
         AutoItAttribute() {
             super();
