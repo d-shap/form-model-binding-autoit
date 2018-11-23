@@ -40,6 +40,6 @@ public interface AutoItBindedAttribute extends BindedAttribute {
      *
      * @return the attribute value.
      */
-    String getValue();
+    Object getValue();
 
 }

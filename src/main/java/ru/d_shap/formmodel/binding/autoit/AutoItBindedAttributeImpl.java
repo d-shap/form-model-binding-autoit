@@ -28,9 +28,9 @@ final class AutoItBindedAttributeImpl implements AutoItBindedAttribute {
 
     private final String _name;
 
-    private final String _value;
+    private final Object _value;
 
-    AutoItBindedAttributeImpl(final String name, final String value) {
+    AutoItBindedAttributeImpl(final String name, final Object value) {
         super();
         _name = name;
         _value = value;
@@ -42,7 +42,7 @@ final class AutoItBindedAttributeImpl implements AutoItBindedAttribute {
     }
 
     @Override
-    public String getValue() {
+    public Object getValue() {
         return _value;
     }
 
