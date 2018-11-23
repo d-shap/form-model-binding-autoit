@@ -59,6 +59,24 @@ public interface AutoItBindedElement extends BindedElement {
     String getControlId();
 
     /**
+     * Check if the control has the specified attribute.
+     *
+     * @param name the specified attribute.
+     *
+     * @return true if the control has the specified attribute.
+     */
+    boolean hasAttribute(String name);
+
+    /**
+     * Get the value of the specified attribute.
+     *
+     * @param name the specified attribute.
+     *
+     * @return the value of the specified attribute.
+     */
+    Object getAttribute(String name);
+
+    /**
      * Click on the control.
      */
     void click();

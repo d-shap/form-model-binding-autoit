@@ -65,6 +65,16 @@ final class AutoItBindedElementImpl implements AutoItBindedElement {
     }
 
     @Override
+    public boolean hasAttribute(final String name) {
+        return false;
+    }
+
+    @Override
+    public Object getAttribute(final String name) {
+        return null;
+    }
+
+    @Override
     public void click() {
         _autoItX.controlClick(_windowTitle, _windowText, _controlId);
     }
