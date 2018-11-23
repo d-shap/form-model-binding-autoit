@@ -67,13 +67,153 @@ public final class AutoItFormBinder {
      *
      * @param autoItX     the AutoIt.
      * @param windowTitle the title of the window to access.
+     * @param id          the specified form's ID.
+     *
+     * @return the binding result.
+     */
+    public Document bind(final AutoItX autoItX, final String windowTitle, final String id) {
+        return bind(autoItX, windowTitle, id, DEFAULT_TIMEOUT_IN_SECONDS, DEFAULT_SLEEP_IN_MILLIS);
+    }
+
+    /**
+     * Bind the specified form definition with the AutoIt source.
+     *
+     * @param autoItX          the AutoIt.
+     * @param windowTitle      the title of the window to access.
+     * @param id               the specified form's ID.
+     * @param timeOutInSeconds the timeout in seconds when an expectation is called.
+     * @param sleepInMillis    the duration in milliseconds to sleep between polls.
+     *
+     * @return the binding result.
+     */
+    public Document bind(final AutoItX autoItX, final String windowTitle, final String id, final long timeOutInSeconds, final long sleepInMillis) {
+        AutoItBindingSource autoItBindingSource = new AutoItBindingSourceImpl(autoItX, windowTitle);
+        AutoItFormBinderWait.BindAttempt<Document> bindAttempt = new DocumentBindAttemptId(id);
+        FormDefinition formDefinition = _formDefinitions.getFormDefinition(id);
+        AutoItFormBinderWait<Document> autoItFormBinderWait = new AutoItFormBinderWait<>(_formBinder, autoItBindingSource, bindAttempt, formDefinition, timeOutInSeconds, sleepInMillis);
+        return autoItFormBinderWait.bind();
+    }
+
+    /**
+     * Bind the specified form definition with the AutoIt source.
+     *
+     * @param autoItX     the AutoIt.
+     * @param windowTitle the title of the window to access.
+     * @param group       the specified form's group.
+     * @param id          the specified form's ID.
+     *
+     * @return the binding result.
+     */
+    public Document bind(final AutoItX autoItX, final String windowTitle, final String group, final String id) {
+        return bind(autoItX, windowTitle, group, id, DEFAULT_TIMEOUT_IN_SECONDS, DEFAULT_SLEEP_IN_MILLIS);
+    }
+
+    /**
+     * Bind the specified form definition with the AutoIt source.
+     *
+     * @param autoItX          the AutoIt.
+     * @param windowTitle      the title of the window to access.
+     * @param group            the specified form's group.
+     * @param id               the specified form's ID.
+     * @param timeOutInSeconds the timeout in seconds when an expectation is called.
+     * @param sleepInMillis    the duration in milliseconds to sleep between polls.
+     *
+     * @return the binding result.
+     */
+    public Document bind(final AutoItX autoItX, final String windowTitle, final String group, final String id, final long timeOutInSeconds, final long sleepInMillis) {
+        AutoItBindingSource autoItBindingSource = new AutoItBindingSourceImpl(autoItX, windowTitle);
+        AutoItFormBinderWait.BindAttempt<Document> bindAttempt = new DocumentBindAttemptGroupAndId(group, id);
+        FormDefinition formDefinition = _formDefinitions.getFormDefinition(group, id);
+        AutoItFormBinderWait<Document> autoItFormBinderWait = new AutoItFormBinderWait<>(_formBinder, autoItBindingSource, bindAttempt, formDefinition, timeOutInSeconds, sleepInMillis);
+        return autoItFormBinderWait.bind();
+    }
+
+    /**
+     * Bind the specified form definition with the AutoIt source.
+     *
+     * @param autoItX           the AutoIt.
+     * @param windowTitle       the title of the window to access.
+     * @param id                the specified form's ID.
+     * @param documentProcessor the document processor.
+     * @param <T>               the generic type of the result of the document processing.
+     *
+     * @return the result of the document processing.
+     */
+    public <T> T bind(final AutoItX autoItX, final String windowTitle, final String id, final DocumentProcessor<T> documentProcessor) {
+        return bind(autoItX, windowTitle, id, DEFAULT_TIMEOUT_IN_SECONDS, DEFAULT_SLEEP_IN_MILLIS, documentProcessor);
+    }
+
+    /**
+     * Bind the specified form definition with the AutoIt source.
+     *
+     * @param autoItX           the AutoIt.
+     * @param windowTitle       the title of the window to access.
+     * @param id                the specified form's ID.
+     * @param timeOutInSeconds  the timeout in seconds when an expectation is called.
+     * @param sleepInMillis     the duration in milliseconds to sleep between polls.
+     * @param documentProcessor the document processor.
+     * @param <T>               the generic type of the result of the document processing.
+     *
+     * @return the result of the document processing.
+     */
+    public <T> T bind(final AutoItX autoItX, final String windowTitle, final String id, final long timeOutInSeconds, final long sleepInMillis, final DocumentProcessor<T> documentProcessor) {
+        AutoItBindingSource autoItBindingSource = new AutoItBindingSourceImpl(autoItX, windowTitle);
+        AutoItFormBinderWait.BindAttempt<T> bindAttempt = new DocumentProcessorBindAttemptId<>(id, documentProcessor);
+        FormDefinition formDefinition = _formDefinitions.getFormDefinition(id);
+        AutoItFormBinderWait<T> autoItFormBinderWait = new AutoItFormBinderWait<>(_formBinder, autoItBindingSource, bindAttempt, formDefinition, timeOutInSeconds, sleepInMillis);
+        return autoItFormBinderWait.bind();
+    }
+
+    /**
+     * Bind the specified form definition with the AutoIt source.
+     *
+     * @param autoItX           the AutoIt.
+     * @param windowTitle       the title of the window to access.
+     * @param group             the specified form's group.
+     * @param id                the specified form's ID.
+     * @param documentProcessor the document processor.
+     * @param <T>               the generic type of the result of the document processing.
+     *
+     * @return the result of the document processing.
+     */
+    public <T> T bind(final AutoItX autoItX, final String windowTitle, final String group, final String id, final DocumentProcessor<T> documentProcessor) {
+        return bind(autoItX, windowTitle, group, id, DEFAULT_TIMEOUT_IN_SECONDS, DEFAULT_SLEEP_IN_MILLIS, documentProcessor);
+    }
+
+    /**
+     * Bind the specified form definition with the AutoIt source.
+     *
+     * @param autoItX           the AutoIt.
+     * @param windowTitle       the title of the window to access.
+     * @param group             the specified form's group.
+     * @param id                the specified form's ID.
+     * @param timeOutInSeconds  the timeout in seconds when an expectation is called.
+     * @param sleepInMillis     the duration in milliseconds to sleep between polls.
+     * @param documentProcessor the document processor.
+     * @param <T>               the generic type of the result of the document processing.
+     *
+     * @return the result of the document processing.
+     */
+    public <T> T bind(final AutoItX autoItX, final String windowTitle, final String group, final String id, final long timeOutInSeconds, final long sleepInMillis, final DocumentProcessor<T> documentProcessor) {
+        AutoItBindingSource autoItBindingSource = new AutoItBindingSourceImpl(autoItX, windowTitle);
+        AutoItFormBinderWait.BindAttempt<T> bindAttempt = new DocumentProcessorBindAttemptGroupAndId<>(group, id, documentProcessor);
+        FormDefinition formDefinition = _formDefinitions.getFormDefinition(group, id);
+        AutoItFormBinderWait<T> autoItFormBinderWait = new AutoItFormBinderWait<>(_formBinder, autoItBindingSource, bindAttempt, formDefinition, timeOutInSeconds, sleepInMillis);
+        return autoItFormBinderWait.bind();
+    }
+
+    /**
+     * Bind the specified form definition with the AutoIt source.
+     *
+     * @param autoItX     the AutoIt.
+     * @param windowTitle the title of the window to access.
      * @param windowText  the text of the window to access.
      * @param id          the specified form's ID.
      *
      * @return the binding result.
      */
-    public Document bind(final AutoItX autoItX, final String windowTitle, final String windowText, final String id) {
-        return bind(autoItX, windowTitle, windowText, id, DEFAULT_TIMEOUT_IN_SECONDS, DEFAULT_SLEEP_IN_MILLIS);
+    public Document bindWithText(final AutoItX autoItX, final String windowTitle, final String windowText, final String id) {
+        return bindWithText(autoItX, windowTitle, windowText, id, DEFAULT_TIMEOUT_IN_SECONDS, DEFAULT_SLEEP_IN_MILLIS);
     }
 
     /**
@@ -88,7 +228,7 @@ public final class AutoItFormBinder {
      *
      * @return the binding result.
      */
-    public Document bind(final AutoItX autoItX, final String windowTitle, final String windowText, final String id, final long timeOutInSeconds, final long sleepInMillis) {
+    public Document bindWithText(final AutoItX autoItX, final String windowTitle, final String windowText, final String id, final long timeOutInSeconds, final long sleepInMillis) {
         AutoItBindingSource autoItBindingSource = new AutoItBindingSourceImpl(autoItX, windowTitle, windowText);
         AutoItFormBinderWait.BindAttempt<Document> bindAttempt = new DocumentBindAttemptId(id);
         FormDefinition formDefinition = _formDefinitions.getFormDefinition(id);
@@ -107,8 +247,8 @@ public final class AutoItFormBinder {
      *
      * @return the binding result.
      */
-    public Document bind(final AutoItX autoItX, final String windowTitle, final String windowText, final String group, final String id) {
-        return bind(autoItX, windowTitle, windowText, group, id, DEFAULT_TIMEOUT_IN_SECONDS, DEFAULT_SLEEP_IN_MILLIS);
+    public Document bindWithText(final AutoItX autoItX, final String windowTitle, final String windowText, final String group, final String id) {
+        return bindWithText(autoItX, windowTitle, windowText, group, id, DEFAULT_TIMEOUT_IN_SECONDS, DEFAULT_SLEEP_IN_MILLIS);
     }
 
     /**
@@ -124,7 +264,7 @@ public final class AutoItFormBinder {
      *
      * @return the binding result.
      */
-    public Document bind(final AutoItX autoItX, final String windowTitle, final String windowText, final String group, final String id, final long timeOutInSeconds, final long sleepInMillis) {
+    public Document bindWithText(final AutoItX autoItX, final String windowTitle, final String windowText, final String group, final String id, final long timeOutInSeconds, final long sleepInMillis) {
         AutoItBindingSource autoItBindingSource = new AutoItBindingSourceImpl(autoItX, windowTitle, windowText);
         AutoItFormBinderWait.BindAttempt<Document> bindAttempt = new DocumentBindAttemptGroupAndId(group, id);
         FormDefinition formDefinition = _formDefinitions.getFormDefinition(group, id);
@@ -144,8 +284,8 @@ public final class AutoItFormBinder {
      *
      * @return the result of the document processing.
      */
-    public <T> T bind(final AutoItX autoItX, final String windowTitle, final String windowText, final String id, final DocumentProcessor<T> documentProcessor) {
-        return bind(autoItX, windowTitle, windowText, id, DEFAULT_TIMEOUT_IN_SECONDS, DEFAULT_SLEEP_IN_MILLIS, documentProcessor);
+    public <T> T bindWithText(final AutoItX autoItX, final String windowTitle, final String windowText, final String id, final DocumentProcessor<T> documentProcessor) {
+        return bindWithText(autoItX, windowTitle, windowText, id, DEFAULT_TIMEOUT_IN_SECONDS, DEFAULT_SLEEP_IN_MILLIS, documentProcessor);
     }
 
     /**
@@ -162,7 +302,7 @@ public final class AutoItFormBinder {
      *
      * @return the result of the document processing.
      */
-    public <T> T bind(final AutoItX autoItX, final String windowTitle, final String windowText, final String id, final long timeOutInSeconds, final long sleepInMillis, final DocumentProcessor<T> documentProcessor) {
+    public <T> T bindWithText(final AutoItX autoItX, final String windowTitle, final String windowText, final String id, final long timeOutInSeconds, final long sleepInMillis, final DocumentProcessor<T> documentProcessor) {
         AutoItBindingSource autoItBindingSource = new AutoItBindingSourceImpl(autoItX, windowTitle, windowText);
         AutoItFormBinderWait.BindAttempt<T> bindAttempt = new DocumentProcessorBindAttemptId<>(id, documentProcessor);
         FormDefinition formDefinition = _formDefinitions.getFormDefinition(id);
@@ -183,8 +323,8 @@ public final class AutoItFormBinder {
      *
      * @return the result of the document processing.
      */
-    public <T> T bind(final AutoItX autoItX, final String windowTitle, final String windowText, final String group, final String id, final DocumentProcessor<T> documentProcessor) {
-        return bind(autoItX, windowTitle, windowText, group, id, DEFAULT_TIMEOUT_IN_SECONDS, DEFAULT_SLEEP_IN_MILLIS, documentProcessor);
+    public <T> T bindWithText(final AutoItX autoItX, final String windowTitle, final String windowText, final String group, final String id, final DocumentProcessor<T> documentProcessor) {
+        return bindWithText(autoItX, windowTitle, windowText, group, id, DEFAULT_TIMEOUT_IN_SECONDS, DEFAULT_SLEEP_IN_MILLIS, documentProcessor);
     }
 
     /**
@@ -202,7 +342,7 @@ public final class AutoItFormBinder {
      *
      * @return the result of the document processing.
      */
-    public <T> T bind(final AutoItX autoItX, final String windowTitle, final String windowText, final String group, final String id, final long timeOutInSeconds, final long sleepInMillis, final DocumentProcessor<T> documentProcessor) {
+    public <T> T bindWithText(final AutoItX autoItX, final String windowTitle, final String windowText, final String group, final String id, final long timeOutInSeconds, final long sleepInMillis, final DocumentProcessor<T> documentProcessor) {
         AutoItBindingSource autoItBindingSource = new AutoItBindingSourceImpl(autoItX, windowTitle, windowText);
         AutoItFormBinderWait.BindAttempt<T> bindAttempt = new DocumentProcessorBindAttemptGroupAndId<>(group, id, documentProcessor);
         FormDefinition formDefinition = _formDefinitions.getFormDefinition(group, id);
