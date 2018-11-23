@@ -51,4 +51,9 @@ public interface AutoItBindedForm extends BindedForm {
      */
     String getWindowText();
 
+    /**
+     * Activate the window to access.
+     */
+    void activate();
+
 }
