@@ -61,4 +61,31 @@ public interface AutoItBindedForm extends BindedForm {
      */
     void close();
 
+    /**
+     * Forces the window to close.
+     */
+    void kill();
+
+    /**
+     * Get the Process ID (PID) associated with the window.
+     *
+     * @return the Process ID (PID) associated with the window.
+     */
+    String getProcessId();
+
+    /**
+     * Send the characters to the control.
+     *
+     * @param text the characters to send.
+     */
+    void sendKeys(String text);
+
+    /**
+     * Send the characters to the control.
+     *
+     * @param text        the characters to send.
+     * @param sendRawKeys true if characters are sended as it is, without no processing.
+     */
+    void sendKeys(String text, boolean sendRawKeys);
+
 }

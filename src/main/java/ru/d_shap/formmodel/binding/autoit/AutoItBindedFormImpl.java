@@ -68,4 +68,25 @@ final class AutoItBindedFormImpl implements AutoItBindedForm {
         _autoItX.winWaitClose(_windowTitle, _windowText);
     }
 
+    @Override
+    public void kill() {
+        _autoItX.winKill(_windowTitle, _windowText);
+    }
+
+    @Override
+    public String getProcessId() {
+        return _autoItX.winGetProcess(_windowTitle, _windowText);
+    }
+
+    @Override
+    public void sendKeys(final String text) {
+        sendKeys(text, false);
+    }
+
+    @Override
+    public void sendKeys(final String text, final boolean sendRawKeys) {
+        activate();
+        _autoItX.send(text, sendRawKeys);
+    }
+
 }
