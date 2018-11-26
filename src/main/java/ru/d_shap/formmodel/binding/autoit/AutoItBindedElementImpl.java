@@ -75,6 +75,56 @@ final class AutoItBindedElementImpl implements AutoItBindedElement {
     }
 
     @Override
+    public boolean getBooleanAttribute(final String name) {
+        return (Boolean) AutoItControlAttributes.getAttribute(_autoItX, _windowTitle, _windowText, _controlId, name);
+    }
+
+    @Override
+    public int getIntAttribute(final String name) {
+        return (Integer) AutoItControlAttributes.getAttribute(_autoItX, _windowTitle, _windowText, _controlId, name);
+    }
+
+    @Override
+    public String getStringAttribute(final String name) {
+        Object value = AutoItControlAttributes.getAttribute(_autoItX, _windowTitle, _windowText, _controlId, name);
+        if (value == null) {
+            return null;
+        } else {
+            return String.valueOf(value);
+        }
+    }
+
+    @Override
+    public boolean isVisible() {
+        return _autoItX.controlCommandIsVisible(_windowTitle, _windowText, _controlId);
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return _autoItX.controlCommandIsEnabled(_windowTitle, _windowText, _controlId);
+    }
+
+    @Override
+    public int getX() {
+        return _autoItX.controlGetPosX(_windowTitle, _windowText, _controlId);
+    }
+
+    @Override
+    public int getY() {
+        return _autoItX.controlGetPosY(_windowTitle, _windowText, _controlId);
+    }
+
+    @Override
+    public int getWidth() {
+        return _autoItX.controlGetPosWidth(_windowTitle, _windowText, _controlId);
+    }
+
+    @Override
+    public int getHeight() {
+        return _autoItX.controlGetPosHeight(_windowTitle, _windowText, _controlId);
+    }
+
+    @Override
     public boolean click() {
         return _autoItX.controlClick(_windowTitle, _windowText, _controlId);
     }

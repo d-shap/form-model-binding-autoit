@@ -52,9 +52,9 @@ public interface AutoItBindedElement extends BindedElement {
     String getWindowText();
 
     /**
-     * Get the control ID to interact with.
+     * Get the control's ID to interact with.
      *
-     * @return the control ID to interact with.
+     * @return the control's ID to interact with.
      */
     String getControlId();
 
@@ -68,13 +68,82 @@ public interface AutoItBindedElement extends BindedElement {
     boolean hasAttribute(String name);
 
     /**
-     * Get the value of the specified attribute.
+     * Get the value of the control's attribute.
      *
-     * @param name the specified attribute.
+     * @param name the control's attribute name.
      *
-     * @return the value of the specified attribute.
+     * @return the value of the control's attribute.
      */
     Object getAttribute(String name);
+
+    /**
+     * Get the value of the control's attribute as boolean.
+     *
+     * @param name the control's attribute name.
+     *
+     * @return the value of the control's attribute as boolean.
+     */
+    boolean getBooleanAttribute(String name);
+
+    /**
+     * Get the value of the control's attribute as int.
+     *
+     * @param name the control's attribute name.
+     *
+     * @return the value of the control's attribute as int.
+     */
+    int getIntAttribute(String name);
+
+    /**
+     * Get the value of the control's attribute as string.
+     *
+     * @param name the control's attribute name.
+     *
+     * @return the value of the control's attribute as string.
+     */
+    String getStringAttribute(String name);
+
+    /**
+     * Check if the control is visible.
+     *
+     * @return true if the control is visible.
+     */
+    boolean isVisible();
+
+    /**
+     * Check if the control is enabled.
+     *
+     * @return true if the control is enabled.
+     */
+    boolean isEnabled();
+
+    /**
+     * Get the control's position X relative to it's window.
+     *
+     * @return the control's position X relative to it's window.
+     */
+    int getX();
+
+    /**
+     * Get the control position Y relative to it's window.
+     *
+     * @return the control position Y relative to it's window.
+     */
+    int getY();
+
+    /**
+     * Get the control's width.
+     *
+     * @return the control's width.
+     */
+    int getWidth();
+
+    /**
+     * Get the control's height.
+     *
+     * @return the control's height.
+     */
+    int getHeight();
 
     /**
      * Click on the control.
