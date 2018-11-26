@@ -76,17 +76,17 @@ final class AutoItBindedElementImpl implements AutoItBindedElement {
 
     @Override
     public boolean getBooleanAttribute(final String name) {
-        return (Boolean) AutoItControlAttributes.getAttribute(_autoItX, _windowTitle, _windowText, _controlId, name);
+        return (Boolean) getAttribute(name);
     }
 
     @Override
     public int getIntAttribute(final String name) {
-        return (Integer) AutoItControlAttributes.getAttribute(_autoItX, _windowTitle, _windowText, _controlId, name);
+        return (Integer) getAttribute(name);
     }
 
     @Override
     public String getStringAttribute(final String name) {
-        Object value = AutoItControlAttributes.getAttribute(_autoItX, _windowTitle, _windowText, _controlId, name);
+        Object value = getAttribute(name);
         if (value == null) {
             return null;
         } else {
