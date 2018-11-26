@@ -56,4 +56,9 @@ public interface AutoItBindedForm extends BindedForm {
      */
     void activate();
 
+    /**
+     * Close the window.
+     */
+    void close();
+
 }

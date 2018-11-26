@@ -62,4 +62,10 @@ final class AutoItBindedFormImpl implements AutoItBindedForm {
         _autoItX.winWaitActive(_windowTitle, _windowText);
     }
 
+    @Override
+    public void close() {
+        _autoItX.winClose(_windowTitle, _windowText);
+        _autoItX.winWaitClose(_windowTitle, _windowText);
+    }
+
 }
