@@ -47,7 +47,7 @@ public interface AutoItBindedAttribute extends BindedAttribute {
      *
      * @return the attribute value as boolean.
      */
-    boolean getBooleanValue();
+    boolean isBooleanValue();
 
     /**
      * Get the attribute value as int.

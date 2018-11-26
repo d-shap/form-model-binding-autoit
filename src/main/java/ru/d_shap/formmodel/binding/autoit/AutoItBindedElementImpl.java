@@ -75,7 +75,7 @@ final class AutoItBindedElementImpl implements AutoItBindedElement {
     }
 
     @Override
-    public boolean getBooleanAttribute(final String name) {
+    public boolean isBooleanAttribute(final String name) {
         return (Boolean) getAttribute(name);
     }
 

@@ -47,7 +47,7 @@ final class AutoItBindedAttributeImpl implements AutoItBindedAttribute {
     }
 
     @Override
-    public boolean getBooleanValue() {
+    public boolean isBooleanValue() {
         return (Boolean) _value;
     }
 

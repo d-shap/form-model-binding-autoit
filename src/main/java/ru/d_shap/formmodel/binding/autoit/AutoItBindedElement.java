@@ -83,7 +83,7 @@ public interface AutoItBindedElement extends BindedElement {
      *
      * @return the value of the control's attribute as boolean.
      */
-    boolean getBooleanAttribute(String name);
+    boolean isBooleanAttribute(String name);
 
     /**
      * Get the value of the control's attribute as int.
