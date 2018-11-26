@@ -131,17 +131,17 @@ final class AutoItBindedElementImpl implements AutoItBindedElement {
 
     @Override
     public void click() {
-        _autoItX.controlClick(_windowTitle, _windowText, _controlId);
+        click(AutoItMouseButton.LEFT, 1, getWidth() / 2, getHeight() / 2);
     }
 
     @Override
     public void click(final AutoItMouseButton mouseButton) {
-        _autoItX.controlClick(_windowTitle, _windowText, _controlId, mouseButton.getValue());
+        click(mouseButton, 1, getWidth() / 2, getHeight() / 2);
     }
 
     @Override
     public void click(final AutoItMouseButton mouseButton, final int clicks) {
-        _autoItX.controlClick(_windowTitle, _windowText, _controlId, mouseButton.getValue(), clicks);
+        click(mouseButton, clicks, getWidth() / 2, getHeight() / 2);
     }
 
     @Override
@@ -172,6 +172,16 @@ final class AutoItBindedElementImpl implements AutoItBindedElement {
     @Override
     public void setText(final String text) {
         _autoItX.ControlSetText(_windowTitle, _windowText, _controlId, text);
+    }
+
+    @Override
+    public void sendKeys(final String text) {
+        sendKeys(text, false);
+    }
+
+    @Override
+    public void sendKeys(final String text, final boolean sendRawKeys) {
+        _autoItX.controlSend(_windowTitle, _windowText, _controlId, text, sendRawKeys);
     }
 
 }

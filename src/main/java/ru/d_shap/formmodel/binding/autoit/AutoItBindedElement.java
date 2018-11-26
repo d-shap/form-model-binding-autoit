@@ -209,4 +209,19 @@ public interface AutoItBindedElement extends BindedElement {
      */
     void setText(String text);
 
+    /**
+     * Send the characters to the control.
+     *
+     * @param text the characters to send.
+     */
+    void sendKeys(String text);
+
+    /**
+     * Send the characters to the control.
+     *
+     * @param text        the characters to send.
+     * @param sendRawKeys true if characters are sended as it is, without no processing.
+     */
+    void sendKeys(String text, boolean sendRawKeys);
+
 }
