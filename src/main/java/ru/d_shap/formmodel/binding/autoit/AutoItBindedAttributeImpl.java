@@ -46,4 +46,23 @@ final class AutoItBindedAttributeImpl implements AutoItBindedAttribute {
         return _value;
     }
 
+    @Override
+    public boolean getBooleanValue() {
+        return (Boolean) _value;
+    }
+
+    @Override
+    public int getIntValue() {
+        return (Integer) _value;
+    }
+
+    @Override
+    public String getStringValue() {
+        if (_value == null) {
+            return null;
+        } else {
+            return String.valueOf(_value);
+        }
+    }
+
 }

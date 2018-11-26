@@ -42,4 +42,25 @@ public interface AutoItBindedAttribute extends BindedAttribute {
      */
     Object getValue();
 
+    /**
+     * Get the attribute value as boolean.
+     *
+     * @return the attribute value as boolean.
+     */
+    boolean getBooleanValue();
+
+    /**
+     * Get the attribute value as int.
+     *
+     * @return the attribute value as int.
+     */
+    int getIntValue();
+
+    /**
+     * Get the attribute value as string.
+     *
+     * @return the attribute value as string.
+     */
+    String getStringValue();
+
 }
