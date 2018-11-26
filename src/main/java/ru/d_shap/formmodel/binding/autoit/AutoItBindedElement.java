@@ -146,30 +146,29 @@ public interface AutoItBindedElement extends BindedElement {
     int getHeight();
 
     /**
-     * Click on the control.
-     *
-     * @return true if success.
+     * Sets input focus to the control.
      */
-    boolean click();
+    void focus();
+
+    /**
+     * Click on the control.
+     */
+    void click();
 
     /**
      * Click on the control.
      *
      * @param button the button to click, "left", "right" or "middle".
-     *
-     * @return true if success.
      */
-    boolean click(String button);
+    void click(String button);
 
     /**
      * Click on the control.
      *
      * @param button the button to click, "left", "right" or "middle".
      * @param clicks the number of times to click.
-     *
-     * @return true if success.
      */
-    boolean click(String button, int clicks);
+    void click(String button, int clicks);
 
     /**
      * Click on the control.
@@ -178,17 +177,13 @@ public interface AutoItBindedElement extends BindedElement {
      * @param clicks the number of times to click.
      * @param x      the x position to click within the control.
      * @param y      the y position to click within the control.
-     *
-     * @return true if success.
      */
-    boolean click(String button, int clicks, int x, int y);
+    void click(String button, int clicks, int x, int y);
 
     /**
      * Checks whether radio or checkbox is checked.
-     *
-     * @return true if checked.
      */
-    boolean isChecked();
+    void isChecked();
 
     /**
      * Check radio or checkbox.
@@ -206,5 +201,12 @@ public interface AutoItBindedElement extends BindedElement {
      * @return the text from the control.
      */
     String getText();
+
+    /**
+     * Set the text of the control.
+     *
+     * @param text the text of the control.
+     */
+    void setText(String text);
 
 }

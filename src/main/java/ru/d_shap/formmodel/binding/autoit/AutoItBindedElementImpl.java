@@ -125,28 +125,33 @@ final class AutoItBindedElementImpl implements AutoItBindedElement {
     }
 
     @Override
-    public boolean click() {
-        return _autoItX.controlClick(_windowTitle, _windowText, _controlId);
+    public void focus() {
+        _autoItX.controlFocus(_windowTitle, _windowText, _controlId);
     }
 
     @Override
-    public boolean click(final String button) {
-        return _autoItX.controlClick(_windowTitle, _windowText, _controlId, button);
+    public void click() {
+        _autoItX.controlClick(_windowTitle, _windowText, _controlId);
     }
 
     @Override
-    public boolean click(final String button, final int clicks) {
-        return _autoItX.controlClick(_windowTitle, _windowText, _controlId, button, clicks);
+    public void click(final String button) {
+        _autoItX.controlClick(_windowTitle, _windowText, _controlId, button);
     }
 
     @Override
-    public boolean click(final String button, final int clicks, final int x, final int y) {
-        return _autoItX.controlClick(_windowTitle, _windowText, _controlId, button, clicks, x, y);
+    public void click(final String button, final int clicks) {
+        _autoItX.controlClick(_windowTitle, _windowText, _controlId, button, clicks);
     }
 
     @Override
-    public boolean isChecked() {
-        return _autoItX.controlCommandIsChecked(_windowTitle, _windowText, _controlId);
+    public void click(final String button, final int clicks, final int x, final int y) {
+        _autoItX.controlClick(_windowTitle, _windowText, _controlId, button, clicks, x, y);
+    }
+
+    @Override
+    public void isChecked() {
+        _autoItX.controlCommandIsChecked(_windowTitle, _windowText, _controlId);
     }
 
     @Override
@@ -162,6 +167,11 @@ final class AutoItBindedElementImpl implements AutoItBindedElement {
     @Override
     public String getText() {
         return _autoItX.controlGetText(_windowTitle, _windowText, _controlId);
+    }
+
+    @Override
+    public void setText(final String text) {
+        _autoItX.ControlSetText(_windowTitle, _windowText, _controlId, text);
     }
 
 }
