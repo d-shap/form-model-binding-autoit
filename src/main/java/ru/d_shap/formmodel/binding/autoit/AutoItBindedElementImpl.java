@@ -135,18 +135,18 @@ final class AutoItBindedElementImpl implements AutoItBindedElement {
     }
 
     @Override
-    public void click(final String button) {
-        _autoItX.controlClick(_windowTitle, _windowText, _controlId, button);
+    public void click(final AutoItMouseButton mouseButton) {
+        _autoItX.controlClick(_windowTitle, _windowText, _controlId, mouseButton.getValue());
     }
 
     @Override
-    public void click(final String button, final int clicks) {
-        _autoItX.controlClick(_windowTitle, _windowText, _controlId, button, clicks);
+    public void click(final AutoItMouseButton mouseButton, final int clicks) {
+        _autoItX.controlClick(_windowTitle, _windowText, _controlId, mouseButton.getValue(), clicks);
     }
 
     @Override
-    public void click(final String button, final int clicks, final int x, final int y) {
-        _autoItX.controlClick(_windowTitle, _windowText, _controlId, button, clicks, x, y);
+    public void click(final AutoItMouseButton mouseButton, final int clicks, final int x, final int y) {
+        _autoItX.controlClick(_windowTitle, _windowText, _controlId, mouseButton.getValue(), clicks, x, y);
     }
 
     @Override

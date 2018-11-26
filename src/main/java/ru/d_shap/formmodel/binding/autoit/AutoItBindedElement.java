@@ -158,27 +158,27 @@ public interface AutoItBindedElement extends BindedElement {
     /**
      * Click on the control.
      *
-     * @param button the button to click, "left", "right" or "middle".
+     * @param mouseButton the button to click.
      */
-    void click(String button);
+    void click(AutoItMouseButton mouseButton);
 
     /**
      * Click on the control.
      *
-     * @param button the button to click, "left", "right" or "middle".
-     * @param clicks the number of times to click.
+     * @param mouseButton the button to click.
+     * @param clicks      the number of times to click.
      */
-    void click(String button, int clicks);
+    void click(AutoItMouseButton mouseButton, int clicks);
 
     /**
      * Click on the control.
      *
-     * @param button the button to click, "left", "right" or "middle".
-     * @param clicks the number of times to click.
-     * @param x      the x position to click within the control.
-     * @param y      the y position to click within the control.
+     * @param mouseButton the button to click.
+     * @param clicks      the number of times to click.
+     * @param x           the x position to click within the control.
+     * @param y           the y position to click within the control.
      */
-    void click(String button, int clicks, int x, int y);
+    void click(AutoItMouseButton mouseButton, int clicks, int x, int y);
 
     /**
      * Checks whether radio or checkbox is checked.
