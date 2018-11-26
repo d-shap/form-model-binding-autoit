@@ -25,11 +25,11 @@ import java.util.Map;
 import autoitx4java.AutoItX;
 
 /**
- * The AutoIt control attributes.
+ * The AutoIt binded element attributes.
  *
  * @author Dmitry Shapovalov
  */
-final class AutoItControlAttributes {
+final class AutoItBindedElementAttributes {
 
     private static final String VISIBLE = "visible";
 
@@ -55,7 +55,7 @@ final class AutoItControlAttributes {
         ATTRIBUTES.put(HEIGHT, new AutoItControlAttributePositionHeight());
     }
 
-    private AutoItControlAttributes() {
+    private AutoItBindedElementAttributes() {
         super();
     }
 
@@ -68,7 +68,7 @@ final class AutoItControlAttributes {
     }
 
     /**
-     * The base AutoIt control attribute class.
+     * The base AutoIt binded element's attribute class.
      *
      * @author Dmitry Shapovalov
      */
@@ -83,7 +83,7 @@ final class AutoItControlAttributes {
     }
 
     /**
-     * The AutoIt control attribute for "visible".
+     * The AutoIt binded element's attribute for "visible".
      *
      * @author Dmitry Shapovalov
      */
@@ -101,7 +101,7 @@ final class AutoItControlAttributes {
     }
 
     /**
-     * The AutoIt control attribute for "enabled".
+     * The AutoIt binded element's attribute for "enabled".
      *
      * @author Dmitry Shapovalov
      */
@@ -119,7 +119,7 @@ final class AutoItControlAttributes {
     }
 
     /**
-     * The AutoIt control attribute for "position x".
+     * The AutoIt binded element's attribute for "x".
      *
      * @author Dmitry Shapovalov
      */
@@ -137,7 +137,7 @@ final class AutoItControlAttributes {
     }
 
     /**
-     * The AutoIt control attribute for "position y".
+     * The AutoIt binded element's attribute for "y".
      *
      * @author Dmitry Shapovalov
      */
@@ -155,7 +155,7 @@ final class AutoItControlAttributes {
     }
 
     /**
-     * The AutoIt control attribute for "width".
+     * The AutoIt binded element's attribute for "width".
      *
      * @author Dmitry Shapovalov
      */
@@ -173,7 +173,7 @@ final class AutoItControlAttributes {
     }
 
     /**
-     * The AutoIt control attribute for "height".
+     * The AutoIt binded element's attribute for "height".
      *
      * @author Dmitry Shapovalov
      */

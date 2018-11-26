@@ -66,12 +66,12 @@ final class AutoItBindedElementImpl implements AutoItBindedElement {
 
     @Override
     public boolean hasAttribute(final String name) {
-        return AutoItControlAttributes.hasAttribute(name);
+        return AutoItBindedElementAttributes.hasAttribute(name);
     }
 
     @Override
     public Object getAttribute(final String name) {
-        return AutoItControlAttributes.getAttribute(_autoItX, _windowTitle, _windowText, _controlId, name);
+        return AutoItBindedElementAttributes.getAttribute(_autoItX, _windowTitle, _windowText, _controlId, name);
     }
 
     @Override
