@@ -85,7 +85,6 @@ final class AutoItBindedFormImpl implements AutoItBindedForm {
 
     @Override
     public void sendKeys(final String text, final boolean sendRawKeys) {
-        activate();
         _autoItX.send(text, sendRawKeys);
     }
 
