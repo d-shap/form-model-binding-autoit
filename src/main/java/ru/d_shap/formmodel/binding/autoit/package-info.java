@@ -37,5 +37,60 @@
  * obtained by the application from this binded form. Script uses this binded elements to automate the
  * application.
  * </p>
+ * <p>
+ * For example, suppose the Windows Calculator application.
+ * </p>
+ * <p>
+ * The model for this application is the following (for Windows 7):
+ * </p>
+ * <pre>
+ * &lt;?xml version="1.0"?&gt;
+ * &lt;ns1:form id="calc" xmlns:ns1="http://d-shap.ru/schema/form-model/1.0"&gt;
+ *     &lt;ns1:element id="button0" lookup="130"/&gt;
+ *     &lt;ns1:element id="button1" lookup="131"/&gt;
+ *     &lt;ns1:element id="button2" lookup="132"/&gt;
+ *     &lt;ns1:element id="button3" lookup="133"/&gt;
+ *     &lt;ns1:element id="button4" lookup="134"/&gt;
+ *     &lt;ns1:element id="button5" lookup="135"/&gt;
+ *     &lt;ns1:element id="button6" lookup="136"/&gt;
+ *     &lt;ns1:element id="button7" lookup="137"/&gt;
+ *     &lt;ns1:element id="button8" lookup="138"/&gt;
+ *     &lt;ns1:element id="button9" lookup="139"/&gt;
+ *     &lt;ns1:element id="buttonPlus" lookup="93"/&gt;
+ *     &lt;ns1:element id="buttonMinus" lookup="94"/&gt;
+ *     &lt;ns1:element id="buttonMult" lookup="92"/&gt;
+ *     &lt;ns1:element id="buttonDiv" lookup="91"/&gt;
+ *     &lt;ns1:element id="buttonEquals" lookup="121"/&gt;
+ *     &lt;ns1:element id="textResult" lookup="150"/&gt;
+ * &lt;/ns1:form&gt;
+ * </pre>
+ * <p>
+ * The following code implements the binding and the application automation:
+ * </p>
+ * <pre>{@code
+ * // Load form definitions
+ * FormDefinitions formDefinitions = new FormDefinitions();
+ * File file = new File("file with the form definition");
+ * FormDefinitionsLoader formDefinitionsLoader = new FormXmlDefinitionsFileLoader(file);
+ * formDefinitionsLoader.load(formDefinitions);
+ * AutoItFormBinder formBinder = new AutoItFormBinder(formDefinitions);
+ *
+ * // Create AutoIt object and run the application
+ * AutoItX autoItX = AutoItContext.getAutoItX();
+ * autoItX.run("calc.exe");
+ *
+ * // Bind the application
+ * Document document = formBinder.bind(autoItX, "Calculator", "calc");
+ *
+ * // Automate the application
+ * formBinder.getBindedElementWithId(document, "button3").click();
+ * formBinder.getBindedElementWithId(document, "buttonMinus").click();
+ * formBinder.getBindedElementWithId(document, "button6").click();
+ * formBinder.getBindedElementWithId(document, "buttonEquals").click();
+ * System.out.println(formBinder.getBindedElementWithId(document, "textResult").getText());
+ *
+ * // Close the application
+ * autoItX.winClose("Calculator");
+ * }</pre>
  */
 package ru.d_shap.formmodel.binding.autoit;
