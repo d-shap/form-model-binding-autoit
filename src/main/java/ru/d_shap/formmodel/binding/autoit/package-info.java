@@ -28,8 +28,8 @@
  * </p>
  * <p>
  * The benefit is in enhancing script maintenance and reducing code duplication. So if the GUI changes,
- * the script themselves don’t need to change, only the GUI definition needs to change.
- * Subsequently all changes to support that new GUI are located in one place.
+ * the script themselves don’t need to change, only the GUI definition needs to change. Subsequently
+ * all changes to support that new GUI are located in one place.
  * </p>
  * <p>
  * The application's GUI is described in the form definition XML. Then this form definition is binded
