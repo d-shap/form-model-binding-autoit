@@ -80,7 +80,8 @@ public final class AutoItFormInstanceBinder implements FormInstanceBinder {
 
         List<BindedElement> result = new ArrayList<>();
         String controlHandle = autoItX.controlGetHandle(windowTitle, windowText, controlId);
-        if (!"".equals(controlHandle)) {
+        int errorCode = autoItX.getError();
+        if (!"".equals(controlHandle) && errorCode == 0) {
             AutoItBindedElement autoItBindedElement = new AutoItBindedElementImpl(autoItX, windowTitle, windowText, controlId);
             result.add(autoItBindedElement);
         }
