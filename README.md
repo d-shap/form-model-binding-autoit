@@ -48,7 +48,8 @@ formDefinitionsLoader.load(formDefinitions);
 AutoItFormBinder formBinder = new AutoItFormBinder(formDefinitions);
 
 // Create AutoIt object and run the application
-AutoItX autoItX = AutoItContext.getAutoItX();
+System.setProperty(LibraryLoader.JACOB_DLL_PATH, "/path/to/jacob/dll");
+AutoItX autoItX = new AutoItX();
 autoItX.run("calc.exe");
 
 // Bind the application
