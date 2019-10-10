@@ -1,7 +1,7 @@
 # Form model AutoIt binding
 Form model AutoIt binding is a form model binding implementation for AutoIt.
 
-Form model AutoIt binding is a wrapper for AutoIt scripts.
+Form model AutoIt binding is a wrapper for the AutoIt scripts.
 It provides facilities to describe the application's GUI, to bind this description with the application and to automate the application through the binded description.
 
 The benefit is in enhancing script maintenance and reducing code duplication.
