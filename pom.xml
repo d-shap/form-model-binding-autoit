@@ -7,8 +7,8 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>Form model autoit binding</name>
-    <description>Form model autoit binding is a form model binding implementation for AutoIt</description>
+    <name>Form model AutoIt binding</name>
+    <description>Form model AutoIt binding is a form model binding implementation for AutoIt</description>
     <url>https://github.com/d-shap/form-model-binding-autoit</url>
 
     <licenses>

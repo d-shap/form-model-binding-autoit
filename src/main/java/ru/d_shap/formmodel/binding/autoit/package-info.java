@@ -1,15 +1,15 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Form model autoit binding is a form model binding implementation for AutoIt.
+// Form model AutoIt binding is a form model binding implementation for AutoIt.
 // Copyright (C) 2018 Dmitry Shapovalov.
 //
-// This file is part of form model autoit binding.
+// This file is part of form model AutoIt binding.
 //
-// Form model autoit binding is free software: you can redistribute it and/or modify
+// Form model AutoIt binding is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Form model autoit binding is distributed in the hope that it will be useful,
+// Form model AutoIt binding is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
@@ -19,10 +19,10 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * <p>
- * Form model autoit binding is a form model binding implementation for AutoIt.
+ * Form model AutoIt binding is a form model binding implementation for AutoIt.
  * </p>
  * <p>
- * Form model autoit binding is a wrapper for AutoIt scripts. It provides facilities to describe
+ * Form model AutoIt binding is a wrapper for AutoIt scripts. It provides facilities to describe
  * the application's GUI, to bind this description with the application and to automate the application
  * through the binded description.
  * </p>
