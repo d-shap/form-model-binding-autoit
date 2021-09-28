@@ -6,7 +6,7 @@ It provides facilities to describe the application's GUI, to bind this descripti
 
 The benefit is in enhancing script maintenance and reducing code duplication.
 So if the GUI changes, the script themselves don’t need to change, only the GUI definition needs to change.
-Subsequently all changes to support that new GUI are located in one place.
+Subsequently, all changes to support that new GUI are located in one place.
 
 The application's GUI is described in the form definition XML.
 Then this form definition is binded with the application's GUI and the result of this binding is a binded form.
@@ -96,7 +96,7 @@ Possible values are:
 * ```required``` - there should be exactly one element.
 * ```required+``` - there should be at least one element.
 * ```optional``` - there could be one element or no element at all.
-* ```optional+``` - there could be more then one element or no element at all.
+* ```optional+``` - there could be more than one element or no element at all.
 * ```prohibited``` - there should not be any element.
 
 Child elements:
@@ -148,7 +148,7 @@ Attributes:
 # HOW TO
 [HOW TO examples](HOWTO.md)
 
-# Latest release
+# The latest release
 Form model library:
 * **&lt;groupId&gt;**: ru.d-shap
 * **&lt;artifactId&gt;**: form-model
