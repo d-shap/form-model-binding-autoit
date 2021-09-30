@@ -17,50 +17,50 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-package ru.d_shap.formmodel.binding.autoit;
+package ru.d_shap.fm.formmodel.binding.autoit;
 
-import autoitx4java.AutoItX;
+import ru.d_shap.fm.formmodel.binding.model.BindedAttribute;
 
 /**
- * The AutoIt binding source implementation.
+ * The AutoIt binded attribute.
  *
  * @author Dmitry Shapovalov
  */
-final class AutoItBindingSourceImpl implements AutoItBindingSource {
+public interface AutoItBindedAttribute extends BindedAttribute {
 
-    private final AutoItX _autoItX;
+    /**
+     * Get the attribute name.
+     *
+     * @return the attribute name.
+     */
+    String getName();
 
-    private final String _windowTitle;
+    /**
+     * Get the attribute value.
+     *
+     * @return the attribute value.
+     */
+    Object getValue();
 
-    private final String _windowText;
+    /**
+     * Get the attribute value as boolean.
+     *
+     * @return the attribute value as boolean.
+     */
+    boolean isBooleanValue();
 
-    AutoItBindingSourceImpl(final AutoItX autoItX, final String windowTitle) {
-        super();
-        _autoItX = autoItX;
-        _windowTitle = windowTitle;
-        _windowText = "";
-    }
+    /**
+     * Get the attribute value as int.
+     *
+     * @return the attribute value as int.
+     */
+    int getIntValue();
 
-    AutoItBindingSourceImpl(final AutoItX autoItX, final String windowTitle, final String windowText) {
-        super();
-        _autoItX = autoItX;
-        _windowTitle = windowTitle;
-        _windowText = windowText;
-    }
-
-    @Override
-    public AutoItX getAutoIt() {
-        return _autoItX;
-    }
-
-    @Override
-    public String getWindowTitle() {
-        return _windowTitle;
-    }
-
-    @Override
-    public String getWindowText() {
-        return _windowText;
-    }
+    /**
+     * Get the attribute value as string.
+     *
+     * @return the attribute value as string.
+     */
+    String getStringValue();
 
 }

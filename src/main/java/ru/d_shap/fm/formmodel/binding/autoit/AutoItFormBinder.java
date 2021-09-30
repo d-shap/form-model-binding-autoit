@@ -17,7 +17,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-package ru.d_shap.formmodel.binding.autoit;
+package ru.d_shap.fm.formmodel.binding.autoit;
 
 import java.util.List;
 
@@ -25,11 +25,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
-import ru.d_shap.formmodel.binding.FormBinder;
-import ru.d_shap.formmodel.definition.model.FormDefinition;
-import ru.d_shap.formmodel.definition.model.FormDefinitions;
-import ru.d_shap.formmodel.document.DocumentLookup;
-import ru.d_shap.formmodel.document.DocumentProcessor;
+import ru.d_shap.fm.formmodel.binding.FormBinder;
+import ru.d_shap.fm.formmodel.definition.model.FormDefinition;
+import ru.d_shap.fm.formmodel.definition.model.FormDefinitions;
+import ru.d_shap.fm.formmodel.document.DocumentLookup;
+import ru.d_shap.fm.formmodel.document.DocumentProcessor;
 
 import autoitx4java.AutoItX;
 

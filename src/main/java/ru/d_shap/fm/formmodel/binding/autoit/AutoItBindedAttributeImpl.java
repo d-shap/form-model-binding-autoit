@@ -17,29 +17,52 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-package ru.d_shap.formmodel.binding.autoit;
+package ru.d_shap.fm.formmodel.binding.autoit;
 
 /**
- * The AutoIt mouse button constants.
+ * The AutoIt binded attribute implementation.
  *
  * @author Dmitry Shapovalov
  */
-public enum AutoItMouseButton {
+final class AutoItBindedAttributeImpl implements AutoItBindedAttribute {
 
-    LEFT("left"),
+    private final String _name;
 
-    MIDDLE("middle"),
+    private final Object _value;
 
-    RIGHT("right");
-
-    private final String _value;
-
-    AutoItMouseButton(final String value) {
+    AutoItBindedAttributeImpl(final String name, final Object value) {
+        super();
+        _name = name;
         _value = value;
     }
 
-    String getValue() {
+    @Override
+    public String getName() {
+        return _name;
+    }
+
+    @Override
+    public Object getValue() {
         return _value;
+    }
+
+    @Override
+    public boolean isBooleanValue() {
+        return (Boolean) _value;
+    }
+
+    @Override
+    public int getIntValue() {
+        return (Integer) _value;
+    }
+
+    @Override
+    public String getStringValue() {
+        if (_value == null) {
+            return null;
+        } else {
+            return String.valueOf(_value);
+        }
     }
 
 }

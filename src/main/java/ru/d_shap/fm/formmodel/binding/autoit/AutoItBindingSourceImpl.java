@@ -17,38 +17,50 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-package ru.d_shap.formmodel.binding.autoit;
-
-import ru.d_shap.formmodel.binding.model.BindingSource;
+package ru.d_shap.fm.formmodel.binding.autoit;
 
 import autoitx4java.AutoItX;
 
 /**
- * The AutoIt binding source.
+ * The AutoIt binding source implementation.
  *
  * @author Dmitry Shapovalov
  */
-public interface AutoItBindingSource extends BindingSource {
+final class AutoItBindingSourceImpl implements AutoItBindingSource {
 
-    /**
-     * Get the AutoIt.
-     *
-     * @return the AutoIt.
-     */
-    AutoItX getAutoIt();
+    private final AutoItX _autoItX;
 
-    /**
-     * Get the title of the window to access.
-     *
-     * @return the title of the window to access.
-     */
-    String getWindowTitle();
+    private final String _windowTitle;
 
-    /**
-     * Get the text of the window to access.
-     *
-     * @return the text of the window to access.
-     */
-    String getWindowText();
+    private final String _windowText;
+
+    AutoItBindingSourceImpl(final AutoItX autoItX, final String windowTitle) {
+        super();
+        _autoItX = autoItX;
+        _windowTitle = windowTitle;
+        _windowText = "";
+    }
+
+    AutoItBindingSourceImpl(final AutoItX autoItX, final String windowTitle, final String windowText) {
+        super();
+        _autoItX = autoItX;
+        _windowTitle = windowTitle;
+        _windowText = windowText;
+    }
+
+    @Override
+    public AutoItX getAutoIt() {
+        return _autoItX;
+    }
+
+    @Override
+    public String getWindowTitle() {
+        return _windowTitle;
+    }
+
+    @Override
+    public String getWindowText() {
+        return _windowText;
+    }
 
 }

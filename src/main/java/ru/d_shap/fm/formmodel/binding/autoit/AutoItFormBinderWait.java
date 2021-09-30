@@ -17,12 +17,12 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-package ru.d_shap.formmodel.binding.autoit;
+package ru.d_shap.fm.formmodel.binding.autoit;
 
-import ru.d_shap.formmodel.Messages;
-import ru.d_shap.formmodel.binding.FormBinder;
-import ru.d_shap.formmodel.binding.FormBindingException;
-import ru.d_shap.formmodel.definition.model.FormDefinition;
+import ru.d_shap.fm.formmodel.Messages;
+import ru.d_shap.fm.formmodel.binding.FormBinder;
+import ru.d_shap.fm.formmodel.binding.FormBindingException;
+import ru.d_shap.fm.formmodel.definition.model.FormDefinition;
 
 /**
  * AutoIt form binder wait.

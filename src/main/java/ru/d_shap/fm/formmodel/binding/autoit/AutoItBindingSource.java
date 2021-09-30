@@ -17,18 +17,18 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-package ru.d_shap.formmodel.binding.autoit;
+package ru.d_shap.fm.formmodel.binding.autoit;
 
-import ru.d_shap.formmodel.binding.model.BindedForm;
+import ru.d_shap.fm.formmodel.binding.model.BindingSource;
 
 import autoitx4java.AutoItX;
 
 /**
- * The AutoIt binded form.
+ * The AutoIt binding source.
  *
  * @author Dmitry Shapovalov
  */
-public interface AutoItBindedForm extends BindedForm {
+public interface AutoItBindingSource extends BindingSource {
 
     /**
      * Get the AutoIt.
@@ -50,42 +50,5 @@ public interface AutoItBindedForm extends BindedForm {
      * @return the text of the window to access.
      */
     String getWindowText();
-
-    /**
-     * Activate the window to access.
-     */
-    void activate();
-
-    /**
-     * Close the window.
-     */
-    void close();
-
-    /**
-     * Forces the window to close.
-     */
-    void kill();
-
-    /**
-     * Get the Process ID (PID) associated with the window.
-     *
-     * @return the Process ID (PID) associated with the window.
-     */
-    String getProcessId();
-
-    /**
-     * Send the characters to the control.
-     *
-     * @param text the characters to send.
-     */
-    void sendKeys(String text);
-
-    /**
-     * Send the characters to the control.
-     *
-     * @param text        the characters to send.
-     * @param sendRawKeys true if characters are sended as it is, without no processing.
-     */
-    void sendKeys(String text, boolean sendRawKeys);
 
 }

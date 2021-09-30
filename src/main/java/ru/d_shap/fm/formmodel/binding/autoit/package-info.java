@@ -94,4 +94,4 @@
  * autoItX.winClose("Calculator");
  * }</pre>
  */
-package ru.d_shap.formmodel.binding.autoit;
+package ru.d_shap.fm.formmodel.binding.autoit;
