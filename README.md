@@ -150,12 +150,12 @@ Attributes:
 
 # The latest release
 Form model library:
-* **&lt;groupId&gt;**: ru.d-shap
+* **&lt;groupId&gt;**: ru.d-shap.fm
 * **&lt;artifactId&gt;**: form-model
 * **&lt;version&gt;**: 1.0
 
 Form model AutoIt binding:
-* **&lt;groupId&gt;**: ru.d-shap
+* **&lt;groupId&gt;**: ru.d-shap.fm
 * **&lt;artifactId&gt;**: form-model-binding-autoit
 * **&lt;version&gt;**: 1.0.0
 
