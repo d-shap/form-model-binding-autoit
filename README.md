@@ -147,17 +147,3 @@ Attributes:
 
 # HOW TO
 [HOW TO examples](HOWTO.md)
-
-# The latest release
-Form model library:
-* **&lt;groupId&gt;**: ru.d-shap.fm
-* **&lt;artifactId&gt;**: form-model
-* **&lt;version&gt;**: 1.0
-
-Form model AutoIt binding:
-* **&lt;groupId&gt;**: ru.d-shap.fm
-* **&lt;artifactId&gt;**: form-model-binding-autoit
-* **&lt;version&gt;**: 1.0.0
-
-# Donation
-If you find my code useful, you can [bye me a coffee](https://www.paypal.me/dshapovalov)
